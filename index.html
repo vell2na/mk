@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mengenal Bahasa Pemrograman</title>
   <style>
     /* Reset */
     * {
@@ -13,81 +13,263 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      background: #fdfdfb;
+      color: #3e2c1c;
+      transition: 0.3s ease;
+    }
+
+    /* Navbar */
+    nav {
+      background: #6f4e37;
+      padding: 15px 25px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      height: 100vh;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      padding: 20px;
     }
 
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 40px 30px;
+    nav h2 {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffe0b2;
+    }
+
+    /* Hero Section */
+    header {
+      background: linear-gradient(135deg, #6f4e37, #8d6e63);
+      color: white;
       text-align: center;
-      max-width: 400px;
-      width: 100%;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      animation: fadeIn 1.5s ease-in-out;
+      padding: 80px 20px 60px;
     }
 
-    h1 {
+    header img {
+      width: 120px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+    }
+
+    header h1 {
       font-size: 2.5rem;
-      background: linear-gradient(90deg, #ff758c, #ff7eb3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       margin-bottom: 15px;
     }
 
-    p {
-      font-size: 1rem;
-      color: #444;
+    header p {
+      font-size: 1.15rem;
+      opacity: 0.95;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #6f4e37;
+      margin-bottom: 15px;
+      font-size: 1.6rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px;
       margin-bottom: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s forwards;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      font-size: 1rem;
-      font-weight: bold;
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+    }
+
+    /* Grid untuk contoh bahasa */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .lang-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .lang-card:hover {
+      transform: translateY(-5px);
+      background: #f9f4f0;
+    }
+
+    .lang-card h3 {
+      color: #6f4e37;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #6f4e37;
+      text-align: center;
+      padding: 20px;
       color: white;
-      background: linear-gradient(90deg, #667eea, #764ba2);
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
+      margin-top: 40px;
     }
 
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 20px rgba(118, 75, 162, 0.5);
+    footer p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Animasi FadeUp */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Responsive */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.8rem;
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
       }
-      p {
-        font-size: 0.9rem;
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .card {
+        padding: 18px;
       }
     }
 
-    /* Animasi */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Hello World 🌍</h1>
-    <p>Welcome to my first responsive & modern HTML page!</p>
-    <a href="#" class="btn">Click Me 🚀</a>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>Bahasa Pemrograman</h2>
+    <ul>
+      <li><a href="#penting">Pentingnya</a></li>
+      <li><a href="#fungsi">Fungsi</a></li>
+      <li><a href="#contoh">Contoh</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/906/906324.png" alt="Coding Icon">
+    <h1>Mengenal Bahasa Pemrograman</h1>
+    <p>Fungsi, Jenis, dan Contohnya</p>
+  </header>
+
+  <!-- Content -->
+  <div class="container">
+
+    <div class="card">
+      <p>
+        Bahasa pemrograman adalah instruksi dasar yang ditulis oleh pemrogram (programmer) agar komputer dapat menjalankan tugas tertentu. 
+        Seiring perkembangan teknologi, kini semakin banyak bahasa pemrograman yang mudah dipelajari dan digunakan.
+      </p>
+    </div>
+
+    <h2 id="penting">Pentingnya Menguasai Bahasa Pemrograman</h2>
+    <div class="card">
+      <p>
+        Bagi seorang developer, bahasa pemrograman sangat penting karena dapat digunakan untuk membangun website, aplikasi, maupun sistem. 
+        Pemahaman yang matang membantu dalam menciptakan teknologi yang efisien dan bermanfaat.
+      </p>
+    </div>
+
+    <h2 id="fungsi">Fungsi Bahasa Pemrograman</h2>
+    <div class="card">
+      <ul>
+        <li><b>Membuat Aplikasi dan Website</b> – seperti media sosial, e-commerce, atau sistem informasi.</li>
+        <li><b>Mengelola Data</b> – misalnya analisis data, big data, hingga AI.</li>
+        <li><b>Mengendalikan Perangkat</b> – digunakan pada smartphone, komputer, maupun IoT.</li>
+        <li><b>Mengotomatisasi Proses</b> – mempermudah pekerjaan manusia melalui perintah otomatis.</li>
+      </ul>
+    </div>
+
+    <h2 id="contoh">Contoh Bahasa Pemrograman Populer</h2>
+    <div class="grid">
+      <div class="lang-card">
+        <h3>Python</h3>
+        <p>Mudah dipahami, populer untuk AI dan data science.</p>
+      </div>
+      <div class="lang-card">
+        <h3>JavaScript</h3>
+        <p>Dipakai untuk website interaktif.</p>
+      </div>
+      <div class="lang-card">
+        <h3>Java</h3>
+        <p>Banyak digunakan di aplikasi Android.</p>
+      </div>
+      <div class="lang-card">
+        <h3>C++</h3>
+        <p>Populer untuk game dan software performa tinggi.</p>
+      </div>
+      <div class="lang-card">
+        <h3>PHP</h3>
+        <p>Masih digunakan dalam pengembangan website.</p>
+      </div>
+    </div>
+
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Artikel Bahasa Pemrograman | Marvel Project</p>
+  </footer>
+
 </body>
 </html>
